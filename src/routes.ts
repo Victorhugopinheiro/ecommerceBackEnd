@@ -9,7 +9,7 @@ router.post('/frete', async (req: Request, res: Response) => {
 
     const {customerCep} = req.body
 
-    const url = 'https://sandbox.melhorenvio.com.br/api/v2/me/shipment/calculate';
+    const url = 'https://www.melhorenvio.com.br/api/v2/me/shipment/calculate';
     const options = {
         method: 'POST',
         headers: {
