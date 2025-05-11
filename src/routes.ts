@@ -9,7 +9,6 @@ router.post('/frete', async (req: Request, res: Response) => {
 
     const {customerCep} = req.body
 
-    
 
     const url = 'https://www.melhorenvio.com.br/api/v2/me/shipment/calculate';
     const options = {
@@ -17,7 +16,7 @@ router.post('/frete', async (req: Request, res: Response) => {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization:`Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTYiLCJqdGkiOiJmM2UyOWExOGYyYWY0NGE3YTgyMGU5ZTYwZjk0YzQzOTZlNTZlZWY4ZDBkODJjMGJmYzcxZjc2OTM2NmEzZjI2ODJkZWIyZjZiNTQzMzk5OCIsImlhdCI6MTc0NTg4MjA4Ny43NzE5NywibmJmIjoxNzQ1ODgyMDg3Ljc3MTk3MywiZXhwIjoxNzc3NDE4MDg3Ljc2NTY1LCJzdWIiOiI5ZWM4ZjkwZi1lYzUzLTRiMTAtYTU0Yy02YTM3NmU3YWMzZjgiLCJzY29wZXMiOlsic2hpcHBpbmctY2FsY3VsYXRlIl19.cPdM6HEwwe4TlBm_Oa9Bl5OazbflUMtqCz1fZiK2nFCjiR_PScmAkqsY3uB47xyeXAOUPyeFpJL-SLykEU7eeCZZlrxPgiF_JsGaeRdEcPU6EXwmqTqmM4Bf9YLvCk46ggkavPS3Snarg0vh-cuHz4psONGp3-5Tq52e0iFL-U_rS0vyyiHCcYra5PnALigmPiIj7c30JG1obXy5kW38XBQfzH4BqyMDNfO8N7omJG-ryTdYt5_l071zmlIrqK2PDuGQ6QxVF1y6fp6tlbAm44UYDZxm4MgRxrlDcOM12DH_N8qxmVQRj4ZIhrU_a5LvoLZi2ufO6Rzm_axkc6LsDAhTt0Pv_2Vix8kT5ob3X-iDY2I5JvXfRrLreh7YQmSH84XWBngfJWFRHr2NgbzB3N_ZBFsgxfVkEuX2x7XBDtZ8Xb8XGehEC108lb9y1drN0Q2225cq5yAr7hAEu3HbcgNMgXDsh52M8mFAI1jrK8eqSc15b456S_AvDDLV5Mnj7jzflYO4n9eez7N9pjTC_xZKpJ1n4YJDVoZMPBwqSDRez9929uFe7RXbdV1aNN4RoTRglrWJN1OvBtllrC7puhiYwaLcnKfQ_L-z069bG94MHnUk8FSewoKFomN1Vk_1CF8OwTpxrazXuCltLbd93tkWUKBtkSf0cjS_syYIRPE`,
+            Authorization:`Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzBiYThhODA1NzM0NWM4NzZlOGZkM2ZhN2IwMmFkOTEwYzNkODA3NzI4NTAzNjI4NzczNDgyMTllOWUyNzEyODE2ZmQyODc1MDRjNTY0YjEiLCJpYXQiOjE3NDY5MjQ5MjAuNDU4MTEyLCJuYmYiOjE3NDY5MjQ5MjAuNDU4MTEzLCJleHAiOjE3Nzg0NjA5MjAuNDQ4NDQ2LCJzdWIiOiI5ZWMyZjQ2Mi00NTg4LTQzNTAtYTU1Yi03NjM4MGI2NmY0MzciLCJzY29wZXMiOlsic2hpcHBpbmctY2FsY3VsYXRlIl19.zxBZSH84u6A6nQLcs5goJU2tGXgEm0Z9mPHDFclXKJcpoNKq7kKb-wpL1VeVyN8xl87TW791SR_Kn6OOQd58GftCS3rVcsjq7xg6qsDyteIgYMOf0sqVJa1LjxWPpe2IITJvcU7PcFL1fMFL334XjSt9zFbYQHj18XvCIuBim5HH3SsFPHxFzE0AUHCkW9po7LPT8K81sTRyM24yeS2V3m1PE2ErZ33AWsPn7e3SKF84X5Ta0qPB8445iYR6cduVYnfmuRZwmObCMGCvb-UYNsevTwdXymgYwsc5hKWLS34QlpAUgLK_CPBpE9wfJHmGNBniIPGusYEe0I49rAVCts-Kj0Kmd9Mfg2r4W18Xx9DS6fj-WiLl0k6F2nvJkXSswzQstIPy8Vm7w_nEUs8ZmH3zKgKi2vgXW6qpDmhHxOtr0--M__HAGzP51Gv7pHYRt5p10LjCI-WMcTSu32_IdjUQD0ZKl3eMg5eRqpsX4abk8HWoDdpjONxH34LPBIvWpGOPEJNoM1Jxcdjv0B2pXpEP2xxwSh6boPmqOQDnkWAgL-rA0KOIAPHNcIxWT8ln7Q4xbtK9eubL1tj32m9gLDRcJ-1qSpHbTFwMzh23JLNcRKWN1Otk4Tilu1DeqZeXwSIsV7IM1MvxMQCMgUmPg_0VMQcyigKCxWNbnRTCzmM`,
             'User-Agent': 'Aplicação azulvictorhugo@gmail.com'
         },
         body: JSON.stringify({
