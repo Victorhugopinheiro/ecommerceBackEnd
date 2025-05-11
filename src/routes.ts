@@ -11,7 +11,7 @@ router.post('/frete', async (req: Request, res: Response) => {
 
     
 
-    const url = 'https://www.melhorenvio.com.br/api/v2/me/shipment/calculate';
+    const url = 'https://sandbox.melhorenvio.com.br/api/v2/me/shipment/calculate';
     const options = {
         method: 'POST',
         headers: {
@@ -21,7 +21,7 @@ router.post('/frete', async (req: Request, res: Response) => {
             'User-Agent': 'Aplicação azulvictorhugo@gmail.com'
         },
         body: JSON.stringify({
-            from: { postal_code: `${customerCep}` },
+            from: { postal_code: `09841550` },
             to: { postal_code: `${String(customerCep)}` },
             products: [
                 {
